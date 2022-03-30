@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Renderer.h"
+#include "Input.h"
 
 bool Initialize()
 {
