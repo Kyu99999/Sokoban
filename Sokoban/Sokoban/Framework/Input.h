@@ -3,13 +3,13 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-typedef enum Keycode
+typedef enum KeyCode
 {
 	W = 'w',
 	A = 'a',
 	S = 's',
 	D = 'd',
-}EKeycode;
+}EKeyCode;
 /// <summary>
 /// 입력 상태를 업데이트한다.
 /// </summary>
@@ -25,10 +25,10 @@ bool GetButtonDown(EKeyCode keyCode);
 /// </summary>
 /// <param name="keyCode">가상키코드</param>
 /// <returns>뗏다면 true, 아니면 false</returns>
-void GetButtonUp(EKeyCode keyCode);
+bool GetButtonUp(EKeyCode keyCode);
 /// <summary>
 /// 버튼이 계속 눌렸는지 체크한다.
 /// </summary>
 /// <param name="keyCode">가상 키 코드</param>
 /// <returns>눌렀다면 true, 아니면 false</returns>
-void GetButton(EKeyCode keyCode);
+bool GetButton(EKeyCode keyCode);
