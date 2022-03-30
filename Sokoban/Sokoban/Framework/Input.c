@@ -35,7 +35,7 @@ bool GetButtonUp(EKeyCode keycode)
 }
 bool GetButton(EKeyCode keycode)
 {
-	if (s_prevKeyState[keycode] && false == s_currentKeyStates[keyCode])
+	if (s_prevKeyState[keycode] && s_currentKeyStates[keyCode])
 	{
 		return true;
 	}
