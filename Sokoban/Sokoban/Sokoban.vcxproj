@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c54f53d4-64ba-4de1-b538-3fda1aece515}</ProjectGuid>
+    <ProjectGuid>{d0106aad-9534-4257-a31f-c20f165847ac}</ProjectGuid>
     <RootNamespace>Sokoban</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -146,8 +146,8 @@
     <ClCompile Include="Framework\Input.c" />
     <ClCompile Include="Framework\Renderer.c" />
     <ClCompile Include="Framework\Timer.c" />
+    <ClCompile Include="Game\Stage.c" />
     <ClCompile Include="Main.c" />
-    <ClCompile Include="Stage.c" />
     <ClCompile Include="stdafx.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -157,8 +157,8 @@
     <ClInclude Include="Framework\Input.h" />
     <ClInclude Include="Framework\Renderer.h" />
     <ClInclude Include="Framework\Timer.h" />
+    <ClInclude Include="Game\Stage.h" />
     <ClInclude Include="Macro.h" />
-    <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

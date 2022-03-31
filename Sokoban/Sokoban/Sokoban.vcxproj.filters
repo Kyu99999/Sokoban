@@ -6,13 +6,13 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Main">
-      <UniqueIdentifier>{1af8c50d-709b-4be6-a328-0ebe9a023ede}</UniqueIdentifier>
+      <UniqueIdentifier>{e6af47ae-3b57-4c00-a722-53fc444f1155}</UniqueIdentifier>
     </Filter>
     <Filter Include="Framework">
-      <UniqueIdentifier>{0465d3dc-2f10-408c-83cf-7936cb5619fc}</UniqueIdentifier>
+      <UniqueIdentifier>{21f7773c-4c69-4e88-8ef1-bc1d1617a9c4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game">
-      <UniqueIdentifier>{6a6989f6-d815-4b7e-a65a-228385743bfb}</UniqueIdentifier>
+      <UniqueIdentifier>{63fdafb2-c3d0-4f01-850e-489715ab547d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -22,10 +22,10 @@
     <ClCompile Include="stdafx.c">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\Renderer.c">
+    <ClCompile Include="Framework\Game.c">
       <Filter>Framework</Filter>
     </ClCompile>
-    <ClCompile Include="Framework\Game.c">
+    <ClCompile Include="Framework\Renderer.c">
       <Filter>Framework</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Input.c">
@@ -34,7 +34,7 @@
     <ClCompile Include="Framework\Timer.c">
       <Filter>Framework</Filter>
     </ClCompile>
-    <ClCompile Include="Stage.c">
+    <ClCompile Include="Game\Stage.c">
       <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -42,10 +42,10 @@
     <ClInclude Include="stdafx.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Framework\Renderer.h">
+    <ClInclude Include="Framework\Game.h">
       <Filter>Framework</Filter>
     </ClInclude>
-    <ClInclude Include="Framework\Game.h">
+    <ClInclude Include="Framework\Renderer.h">
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Input.h">
@@ -54,11 +54,11 @@
     <ClInclude Include="Framework\Timer.h">
       <Filter>Framework</Filter>
     </ClInclude>
-    <ClInclude Include="Stage.h">
+    <ClInclude Include="Game\Stage.h">
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Macro.h">
-      <Filter>Framework</Filter>
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
