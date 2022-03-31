@@ -5,10 +5,10 @@
 
 typedef enum KeyCode
 {
-	W = 'w',
-	A = 'a',
-	S = 's',
-	D = 'd',
+	KEYCODE_W = 'W',
+	KEYCODE_A = 'A',
+	KEYCODE_S = 'S',
+	KEYCODE_D = 'D',
 }EKeyCode;
 /// <summary>
 /// 입력 상태를 업데이트한다.

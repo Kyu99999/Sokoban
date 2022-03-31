@@ -11,6 +11,9 @@
     <Filter Include="Framework">
       <UniqueIdentifier>{0465d3dc-2f10-408c-83cf-7936cb5619fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{6a6989f6-d815-4b7e-a65a-228385743bfb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.c">
@@ -28,6 +31,12 @@
     <ClCompile Include="Framework\Input.c">
       <Filter>Framework</Filter>
     </ClCompile>
+    <ClCompile Include="Framework\Timer.c">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.c">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -40,6 +49,15 @@
       <Filter>Framework</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Input.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Timer.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
       <Filter>Framework</Filter>
     </ClInclude>
   </ItemGroup>

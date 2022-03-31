@@ -1,0 +1,35 @@
+diff a/Sokoban/Sokoban/Framework/Game.c b/Sokoban/Sokoban/Framework/Game.c	(rejected hunks)
+@@ -13,12 +13,32 @@
+ 
+ void processInput()
+ {
+-
++	UpdateInput();
+ }
+ 
+ void update()
+ {
++	if (GetButton(KEYCODE_W))
++	{
++		SetKeyMessage(KEYCODE_W);
++	}
++
++	else if (GetButton(KEYCODE_D))
++	{
++		SetKeyMessage(KEYCODE_D);
++	}
++
++	else if (GetButton(KEYCODE_S))
++	{
++		SetKeyMessage(KEYCODE_S);
++	}
++
++	else if (GetButton(KEYCODE_A))
++	{
++		SetKeyMessage(KEYCODE_A);
++	}
+ 
++	
+ 
+ }
+ 
