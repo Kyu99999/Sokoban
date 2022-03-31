@@ -11,6 +11,34 @@ bool parseMapType(int i, int j, char mapType)
 {
 	switch (mapType)
 	{
+	case '#':
+		s_map[i][j]='#';
+		return true; 
+		break;
+	case 'P':
+		s_map[i][j]='P';
+		return true; 
+		break;
+	case 'a':
+		s_map[i][j]='a';
+		return true; 
+		break;
+	case 'O':
+		s_map[i][j]='O';
+		return true; 
+		break;
+	case '@':
+		s_map[i][j]='@';
+		return true; 
+		break;
+	case '\n' :
+		s_map[i][j] = '\n';
+		return true;
+		break;
+	default:
+		s_map[i][j]=' ';
+		return true;
+		break;
 		// 각 맵 타입별로 해줘야 하는 일들
 	}
 
@@ -66,6 +94,7 @@ void LoadStage(EStageLevel level)
 
 void UpdateStage()
 {
+	
 	// 입력에 대해서 처리를 함
 
 	// 게임이 클리어 됐는지도 파악함
