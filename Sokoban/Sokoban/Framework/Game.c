@@ -1,37 +1,32 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Renderer.h"
+#include "Input.h"
 #include "Timer.h"
+#include "Game/Stage.h"
+
 bool Initialize()
 {
 	if (false == InitializeRenderer())
 	{
-		return true;
+		return false;
 	}
+
 	InitializeTimer();
+
+	LoadStage(STAGE_01);
+
+	return true;
 }
 
 void processInput()
-{ 
-	
+{
+	UpdateInput();
 }
 
-void update() {
-	//// 0.5초 간격으로 특정 메세지 깜박이기
-	//static float elapsedTime = 0.0f;
-	//static bool canShowMessage = false;
-	//elapsedTime += GetDeltaTime();
-	//if (elapsedTime > 0.5F)
-	//{
-	//	elapsedTime = 0.0f;
-	//	canShowMessage = !canShowMessage;
-	//}
-
-	//if (canShowMessage)
-	//{
-	//	SetMessage("짜잔");
-	//}
-
+void update()
+{
+	UpdateStage();
 }
 
 void render()
@@ -41,19 +36,13 @@ void render()
 
 int32_t Run()
 {
-	// Game Loop => 플레이어로부터의 입력을 하드웨어와 분리시킨다.
-	// https://www.gameprogrammingpatterns.com/game-loop.html
-
-	// Game Loop의 전체를 Frame
-
 	while (true)
 	{
-		// 입력 처리
+		UpdateTimer();
 		processInput();
-		// 업데이트
 		update();
-		// 렌더링
 		render();
-
 	}
+
+	return 0;
 }

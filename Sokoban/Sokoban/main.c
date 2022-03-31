@@ -1,13 +1,14 @@
-#include "stdafx.h"
-#include "Framework/Game.h" //main.cÀÖ´Â Æú´õ¿¡¼­ »ó´ëÂüÁ¶·Î ÇÑ°Å
+ï»¿#include "stdafx.h"
+#include "Framework/Game.h"
+
 int main(void)
 {
 	if (false == Initialize())
 	{
-		puts("°ÔÀÓÀ» ·ÎµùÇÏ´Âµ¥ ¹®ÀÚ°¡ »ı°å½À´Ï´Ù.");
+		puts("ê²Œì„ì„ ë¡œë”©í•˜ëŠ” ë° ë¬¸ì œê°€ ìƒê²¼ìŠµë‹ˆë‹¤.");
+
 		return 1;
 	}
 
 	return Run();
-
 }
