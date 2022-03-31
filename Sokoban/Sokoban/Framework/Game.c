@@ -17,20 +17,20 @@ void processInput()
 }
 
 void update() {
-	// 0.5초 간격으로 특정 메세지 깜박이기
-	static float elapsedTime = 0.0f;
-	static bool canShowMessage = false;
-	elapsedTime += GetDeltaTime();
-	if (elapsedTime > 0.5F)
-	{
-		elapsedTime = 0.0f;
-		canShowMessage = !canShowMessage;
-	}
+	//// 0.5초 간격으로 특정 메세지 깜박이기
+	//static float elapsedTime = 0.0f;
+	//static bool canShowMessage = false;
+	//elapsedTime += GetDeltaTime();
+	//if (elapsedTime > 0.5F)
+	//{
+	//	elapsedTime = 0.0f;
+	//	canShowMessage = !canShowMessage;
+	//}
 
-	if (canShowMessage)
-	{
-		SetMessage("짜잔");
-	}
+	//if (canShowMessage)
+	//{
+	//	SetMessage("짜잔");
+	//}
 
 }
 

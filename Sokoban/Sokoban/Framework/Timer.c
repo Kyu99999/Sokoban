@@ -10,7 +10,7 @@ void InitializeTimer()
 }
 //프로그램이 시작한 이후 몇번이나 틱킹이 됬는지
 //클럭 횟수 반환
-// 그럼 정확히는 0.5001567
+
 void UpdateTimer()
 {
 	clock_t currentTick = clock();
