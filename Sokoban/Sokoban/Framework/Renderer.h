@@ -11,5 +11,6 @@ bool InitializeRenderer();
 ///	맵을 그린다.
 /// </summary>
 /// <returns></returns>
-void RenderMap(); 5
-void SetKeyMessage(int keyCode);void SetKeyMessage(int keyCode);
+void RenderMap();
+
+void SetMessage(const char message[24]);
