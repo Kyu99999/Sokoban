@@ -14,10 +14,17 @@ static int32_t s_boxOnGoalCount = 0;
 static int32_t s_playerX = 0;
 static int32_t s_playerY = 0;
 
+static GoalXY Goal[100];
+static int Goal_i = 0;
+
 static EStageLevel level = 1;
+
+static int Box = 0;
 
 bool parseMapType(int i, int j, char mapType)
 {
+	
+	
 	switch (mapType)
 	{
 	case MAPTYPE_WALL:	//벽
@@ -32,10 +39,14 @@ bool parseMapType(int i, int j, char mapType)
 		return true;
 		break;
 	case MAPTYPE_GOAL:
+		Goal[Goal_i].Goal_X = j;
+		Goal[Goal_i].Goal_Y = i;
+		Goal_i++;
 		s_goalCount++;
 		return true;
 		break;
 	case MAPTYPE_BOX_ON_GOAL:
+		
 		s_goalCount++;
 		s_boxOnGoalCount++;
 		return true;
@@ -68,6 +79,7 @@ void clearStage()
 void LoadStage(EStageLevel level)
 {
 	assert(STAGE_01 <= level && level <= STAGE_MAX);
+	Goal_i = 0;
 
 	static char path[MAX_PATH] = { 0 };
 	sprintf_s(path, sizeof(path), "Stage/Stage%02d.txt", (int32_t)level);
@@ -137,6 +149,32 @@ void MovePlayer()
 			s_map[s_playerY][s_playerX] = ' ';
 			s_playerY -= 1;
 		}
+		else if ((s_map[s_playerY - 1][s_playerX] == '@'))
+		{
+			if (s_map[s_playerY - 2][s_playerX] == '#') // 벽이면 무효
+			{
+				return 0;
+			}
+			else if (s_map[s_playerY - 2][s_playerX] == 'O')
+			{
+				s_map[s_playerY - 2][s_playerX] = '@';
+				s_map[s_playerY - 1][s_playerX] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerY -= 1;
+			}
+			else if (s_map[s_playerY - 2][s_playerX] == ' ')
+			{
+				s_map[s_playerY - 2][s_playerX] = 'a';
+				s_map[s_playerY - 1][s_playerX] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerY -= 1;
+			}
+			else if ((s_map[s_playerY - 2][s_playerX] == '@'))
+			{
+				return 0;
+			}
+		}
+		
 	}
 	else if (GetButtonDown(KEYCODE_A))
 	{
@@ -174,8 +212,33 @@ void MovePlayer()
 			s_map[s_playerY][s_playerX] = ' ';
 			s_playerX -= 1;
 		}
+		else if ((s_map[s_playerY ][s_playerX-1] == '@'))
+		{
+			if (s_map[s_playerY ][s_playerX-2] == '#') // 벽이면 무효
+			{
+				return 0;
+			}
+			else if (s_map[s_playerY][s_playerX-2] == 'O')
+			{
+				s_map[s_playerY ][s_playerX-2] = '@';
+				s_map[s_playerY ][s_playerX-1] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerX -= 1;
+			}
+			else if (s_map[s_playerY ][s_playerX-2] == ' ')
+			{
+				s_map[s_playerY ][s_playerX-2] = 'a';
+				s_map[s_playerY ][s_playerX-1] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerX -= 1;
+			}
+			else if ((s_map[s_playerY ][s_playerX-2] == '@'))
+			{
+				return 0;
+			}
+		}
+	
 		
-
 
 	}
 	else if (GetButtonDown(KEYCODE_S))
@@ -214,7 +277,32 @@ void MovePlayer()
 			s_map[s_playerY][s_playerX] = ' ';
 			s_playerY += 1;
 		}
-	
+		else if ((s_map[s_playerY + 1][s_playerX] == '@'))
+		{
+			if (s_map[s_playerY + 2][s_playerX] == '#') // 벽이면 무효
+			{
+				return 0;
+			}
+			else if (s_map[s_playerY + 2][s_playerX] == 'O')
+			{
+				s_map[s_playerY + 2][s_playerX] = '@';
+				s_map[s_playerY + 1][s_playerX] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerY += 1;
+			}
+			else if (s_map[s_playerY + 2][s_playerX] == ' ')
+			{
+				s_map[s_playerY + 2][s_playerX] = 'a';
+				s_map[s_playerY + 1][s_playerX] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerY += 1;
+			}
+			else if ((s_map[s_playerY + 2][s_playerX] == '@'))
+			{
+				return 0;
+			}
+		}
+		
 	}
 	else if (GetButtonDown(KEYCODE_D))
 	{
@@ -251,6 +339,40 @@ void MovePlayer()
 			s_map[s_playerY][s_playerX + 1] = 'P';
 			s_map[s_playerY][s_playerX] = ' ';
 			s_playerX += 1;
+		}
+		else if ((s_map[s_playerY ][s_playerX+1] == '@'))
+		{
+			if (s_map[s_playerY ][s_playerX+2] == '#') // 벽이면 무효
+			{
+				return 0;
+			}
+			else if (s_map[s_playerY ][s_playerX+2] == 'O')
+			{
+				s_map[s_playerY ][s_playerX+2] = '@';
+				s_map[s_playerY ][s_playerX+1] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerX += 1;
+			}
+			else if (s_map[s_playerY ][s_playerX+2] == ' ')
+			{
+				s_map[s_playerY ][s_playerX+2] = 'a';
+				s_map[s_playerY ][s_playerX+1] = 'P';
+				s_map[s_playerY][s_playerX] = ' ';
+				s_playerX += 1;
+			}
+			else if ((s_map[s_playerY ][s_playerX+2] == '@'))
+			{
+
+				return 0;
+			}
+		}
+		
+	}
+	for (int i = 0; i < Goal_i; i++)
+	{
+		if (s_map[Goal[i].Goal_Y][Goal[i].Goal_X] == ' ')
+		{
+			s_map[Goal[i].Goal_Y][Goal[i].Goal_X] = 'O';
 		}
 	}
 }

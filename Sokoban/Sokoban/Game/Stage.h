@@ -33,3 +33,9 @@ void UpdateStage();
 /// 맵을 반환한다.
 ///</summary>
 const char** GetMap();
+
+typedef struct 
+{
+	int Goal_X;
+	int Goal_Y;
+}GoalXY;

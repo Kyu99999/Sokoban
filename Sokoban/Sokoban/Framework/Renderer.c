@@ -43,5 +43,6 @@ void RenderMap()
 		puts(s_map[i]);
 	}
 
+
 	clear();
 }
